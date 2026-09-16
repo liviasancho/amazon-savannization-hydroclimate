@@ -95,6 +95,6 @@ This software is distributed under the Apache License 2.0.
 
 Contributions associated with the manuscript are documented in `AUTHORS.md`.
 
-See `CONTRIBUTING.md for repository contribution guidelines.
+See `CONTRIBUTING.md` for repository contribution guidelines.
 
 
