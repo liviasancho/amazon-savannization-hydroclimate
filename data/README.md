@@ -27,6 +27,11 @@ Temporal coverage used:
 1961-01-01 to 2025-12-31
 ```
 
+Climatology used:
+```text
+1981-2010
+```
+
 Temporal resolution:
 ```text
 daily
@@ -70,6 +75,21 @@ We generated atmospheric-blocking outputs independently using the RiskClima ERA5
 Repository:
 
 https://github.com/lammoc-uff/cnpq-riskclima
+
+Data source used:
+```text
+ERA5
+```
+
+Temporal coverage used:
+```text
+1961-01-01 to 2025-12-31
+```
+
+Climatology used:
+```text
+1981-2010
+```
 
 Required output for the downstream analysis:
 ```text
