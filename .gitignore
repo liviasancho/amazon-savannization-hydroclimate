@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environments
+.venv/
+venv/
+env/
+.env
+.conda/
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# Climate datasets
+*.nc
+*.nc4
+*.grib
+*.grb
+*.grib2
+*.zarr/
+
+# Large raw data
+data/raw/
+data/interim/
+data/processed/
+
+# Results
+outputs/
+results/
+figures/
+
+# Local configuration
+config/paths.yaml
+
+# Logs
+*.log
