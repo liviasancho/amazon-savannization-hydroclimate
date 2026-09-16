@@ -41,3 +41,60 @@ docs/
 
 data/
       Data-access instructions only; original datasets are not redistributed
+```
+
+## Hydroclimatic analyses
+
+The analysis workflow includes:
+
+- pixel-wise Mann-Kendall trends in SPEI;
+- Mann-Kendall trends in annual atmospheric-blocking frequency;
+- monthly blocking–SPEI associations;
+- lagged blocking–SPEI correlations;
+- spatial Pearson-correlation maps;
+- high- versus low-blocking SPEI composites.
+
+Detailed methodology is available in:
+```text
+docs/methodology_hydroclimate.md
+```
+
+## Installation
+
+A Conda environment is recommended because the workflow depends on geospatial libraries such as Cartopy, GEOS, and PROJ.
+```text
+conda env create -f environment.yml
+conda activate amazon-hydroclimate
+```
+
+Reproducing the analysis
+
+See:
+```text
+docs/reproduction.md
+```
+for the complete workflow.
+
+## Data availability
+
+Original BR-DWGD and ERA5 datasets are not redistributed in this repository.
+
+Users must obtain the original datasets from their respective providers.
+
+Generated large NetCDF files are also excluded from Git version control.
+
+## Citation
+
+A software citation will be provided through `CITATION.cff` and a Zenodo DOI for the release associated with the manuscript.
+
+License
+
+This software is distributed under the Apache License 2.0.
+
+## Contributions
+
+Contributions associated with the manuscript are documented in `AUTHORS.md`.
+
+See `CONTRIBUTING.md for repository contribution guidelines.
+
+
