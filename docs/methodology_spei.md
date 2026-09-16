@@ -13,13 +13,17 @@ Before calculation, the pipeline verifies file existence, the presence of expect
 
 ## Climatic water balance and Temporal aggregation
 
-Because the SPEI is calculated monthly, daily precipitation and ETo data are summed for each month. Prior validation of daily data continuity allows a strict monthly sum, with the result 
+Because the SPEI is calculated monthly, daily precipitation and ETo data are summed monthly. Prior validation of daily data continuity allows a strict monthly sum, with the result 
 recorded as missing if any daily value within the month is missing.
 $`
-Pₘ = Σ P_d
-EToₘ = Σ ETo_d
+Pₘ = \sum{P_{d}}
+`$
+$`
+EToₘ = \sum{ETo_{d}}
+`$
 The monthly climatic water balance is then defined as:
-Dₘ = Pₘ − EToₘ
+$`
+Dₘ = P_{m} − ETo_{m}
 `$
 Positive D values indicate a relative surplus of precipitation compared to reference evaporative demand; negative values ​​indicate a relative deficit.
 
