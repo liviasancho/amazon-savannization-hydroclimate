@@ -22,19 +22,35 @@ pr   - precipitation
 ETo  - reference evapotranspiration
 ```
 
+Temporal resolution:
+```text
+daily
+```
+
 Temporal coverage used:
 ```text
 1961-01-01 to 2025-12-31
 ```
 
-Climatology used:
+### SPEI methodology
+
+The climatic water balance is calculated as:
 ```text
-1981-2010
+D = P - ETo
 ```
 
-Temporal resolution:
+where `P` is monthly precipitation and `ETo` is monthly reference evapotranspiration.
+
+SPEI is calculated at 1-, 3-, 6-, and 12-month accumulation scales using:
+
+- calibration period: 1981–2010;
+- three-parameter log-logistic distribution;
+- generalized logistic parameterization;
+- unbiased probability-weighted moments (ub-PWM).
+
+Detailed methodology is available in:
 ```text
-daily
+docs/methodology_spei.md
 ```
 
 Dataset information and download page:
@@ -86,7 +102,7 @@ Temporal coverage used:
 1961-01-01 to 2025-12-31
 ```
 
-Climatology used:
+Calibration period:
 ```text
 1981-2010
 ```
