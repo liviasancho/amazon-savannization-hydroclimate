@@ -61,7 +61,7 @@ https://github.com/lammoc-uff/cnpq-riskclima
 Commit:
 
 ```text
-TO BE ADDED
+b1a6948d73b0cc2f6a13e4ecd5bc09f5be54b7dc
 ```
 
 Period: 1961-2025
