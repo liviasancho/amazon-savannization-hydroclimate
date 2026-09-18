@@ -11,6 +11,17 @@ This repository contains the code used to:
 - Investigate relationships between atmospheric blocking and hydroclimatic drought;
 - Generate spatial correlation and composite maps used in the associated study.
 
+## Reproducibility status
+
+The SPEI calculation and hydroclimatic-analysis workflows are currently available.
+Additional analysis components from manuscript coauthors will be incorporated before the archived v1.0.0 release.
+
+## External software dependencies
+
+Atmospheric blocking is generated externally using the RiskClima repository.
+The exact commit used for the manuscript is recorded in `workflow/blocking/README.md`.
+The blocking implementation is not duplicated here.
+
 ## Associated study
 
 This repository supports the hydroclimatic component of a manuscript investigating environmental change and potential savannization processes in the Brazilian Amazon.
