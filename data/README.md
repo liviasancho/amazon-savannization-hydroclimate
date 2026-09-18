@@ -56,13 +56,17 @@ docs/methodology_spei.md
 Dataset information and download page:
 ```text
 https://sites.google.com/site/alexandrecandidoxavierufes/brazilian-daily-weather-gridded-data
+```
 
 Official code repository:
 
+```text
 https://github.com/AlexandreCandidoXavier/BR-DWGD
+```
 
 Reference:
 
+```text
 Xavier, A. C., Scanlon, B. R., King, C. W., & Alves, A. I. (2022).
 New improved Brazilian daily weather gridded data (1961–2020).
 International Journal of Climatology, 42(16), 8390–8404.
