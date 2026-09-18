@@ -59,7 +59,7 @@ The blocking implementation is intentionally not copied into this repository.
 The version used in the manuscript must be identified by the exact RiskClima Git commit:
 
 ```text
-RiskClima commit: TO BE ADDED
+RiskClima commit: b1a6948d73b0cc2f6a13e4ecd5bc09f5be54b7dc
 ```
 The user should obtain the exact commit from the RiskClima checkout used to generate the blocking data.
 
