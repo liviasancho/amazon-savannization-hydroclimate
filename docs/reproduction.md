@@ -21,7 +21,10 @@ conda env create -f environment.yml
 conda activate amazon-hydroclimate
 ```
 
-### 2. Obtain BR-DWGD data
+### 2. Obtain spatial boundaries
+
+
+### 3. Obtain BR-DWGD data
 
 Download the required precipitation and reference-evapotranspiration files listed in:
 
@@ -29,7 +32,7 @@ Download the required precipitation and reference-evapotranspiration files liste
 data/README.md
 ```
 
-### 3. Calculate SPEI
+### 4. Calculate SPEI
 
 Example:
 
@@ -42,7 +45,16 @@ python scripts/spei/run_spei_brdwgd.py \
     --save-monthly-balance
 ```
 
-### 4. Generate atmospheric-blocking data
+### 5. Calculate climate-extreme indices
+
+
+### 6. Calculate Pettitt change points
+
+
+### 7. Generate KDE comparison
+
+
+### 8. Generate atmospheric blocking with RiskClima
 
 Follow the RiskClima blocking workflow documented in:
 
@@ -56,7 +68,7 @@ The downstream analysis requires:
 daily_blocking_series.csv
 ```
 
-### 5. Run hydroclimatic analyses
+### 9. Run blocking–SPEI analysis
 
 ```bash
 python scripts/analysis/hydroclimate_blocking_spei_analysis.py \
@@ -71,7 +83,13 @@ python scripts/analysis/hydroclimate_blocking_spei_analysis.py \
         total north north_h1 north_h2 south south_h1 south_h2
 ```
 
-### 6. Expected outputs
+### 10. Obtain/process MapBiomas
+
+
+### 11. [later] Landsat LST workflow
+
+
+### 12. Expected outputs
 
 The workflow generates:
 
