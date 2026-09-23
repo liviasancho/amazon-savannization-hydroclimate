@@ -70,4 +70,5 @@ The Arc polygon was used to:
 - calculate cosine-latitude-weighted regional climate-index means;
 - compare climate-extreme distributions between periods;
 - perform change-point analyses.
-- 
+
+
