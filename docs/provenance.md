@@ -3,32 +3,45 @@
 ## Workflow overview
 
 ```text
-BR-DWGD precipitation
-          +
-BR-DWGD reference evapotranspiration
+IBGE Legal Amazon 2024
           |
-          v
-      SPEI workflow
-          |
-          +--> SPEI-1
-          +--> SPEI-3
-          +--> SPEI-6
-          +--> SPEI-12
-          |
-          |
-ERA5 ---> RiskClima atmospheric-blocking workflow
-          |
-          v
- daily_blocking_series.csv
-          |
-          +---------------------+
-                                |
-                                v
-                    Hydroclimatic analysis
-                                |
-                 +--------------+--------------+
-                 |              |              |
-               trends      correlations    composites
+          +-------------------+
+          |                   |
+          v                   v
+       BR-DWGD             MapBiomas 11
+       /     \                 |
+      /       \                v
+     v         v          Land-cover analysis
+   SPEI    Climate extremes
+     |       /          \
+     |      v            v
+     |   Pettitt         KDE
+     |      \            /
+     |       \          /
+     |        Arc of Deforestation
+     |               ^
+     |               |
+     |          PRODES 2024
+     |               +
+     |       municipal boundaries
+     |
+   ERA5
+    |
+    v
+ RiskClima
+ commit b1a6948d73b0cc2f6a13e4ecd5bc09f5be54b7dc
+  |
+  v
+daily_blocking_series.csv
+  |
+  +---------------+
+                  |
+                  v
+       Hydroclimatic analysis
+                  |
+   +--------------+--------------+
+   |              |              |
+ trends      correlations    composites
 ```
 
 
@@ -67,6 +80,8 @@ b1a6948d73b0cc2f6a13e4ecd5bc09f5be54b7dc
 Period: 1961-2025
 
 Climatology: 1981-2010
+
+Municipal boundary source: TO BE DOCUMENTED
 
 ## Analysis software
 
