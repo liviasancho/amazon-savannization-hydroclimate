@@ -10,14 +10,14 @@ Contributions:
 
 - SPEI methodological design;
 - BR-DWGD precipitation and reference-evapotranspiration processing;
-- implementation of SPEI-1, SPEI-3, SPEI-6, and SPEI-12;
-- atmospheric-blocking/SPEI integration;
+- Implementation of SPEI-1, SPEI-3, SPEI-6, and SPEI-12;
+- Atmospheric-blocking/SPEI integration;
 - Mann-Kendall trend analyses;
-- lagged correlation analyses;
-- spatial correlation analyses;
-- composite analyses;
-- cartographic visualization;
-- repository maintenance and reproducibility documentation.
+- Lagged correlation analyses;
+- Spatial correlation analyses;
+- Composite analyses;
+- Cartographic visualization;
+- Repository maintenance and reproducibility documentation.
 
 ### Contributor #2 
 
