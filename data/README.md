@@ -121,10 +121,65 @@ The exact RiskClima revision used to generate this file is documented in:
 workflow/blocking/README.md
 ```
 
-## Legal Amazon boundary
 
-The study uses a Legal Amazon polygon as its spatial mask and cartographic boundary.
+## Brazilian Legal Amazon boundary
 
-The exact source, version, and access information for this shapefile will be recorded here before the final software release.
+The spatial domain of the Brazilian Legal Amazon was defined using the official 2024 Legal Amazon boundary distributed by the Brazilian Institute of Geography and Statistics (IBGE).
+
+Dataset:
+Legal Amazon boundary
+
+Provider:
+Instituto Brasileiro de Geografia e Estatística (IBGE)
+
+Year:
+2024
+
+File used:
+`Limites_Amazonia_Legal_2024.shp`
+
+Download:
+https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/amazonia_legal/2024/Limites_Amazonia_Legal_2024_shp.zip
+
+Original CRS:
+SIRGAS 2000 (EPSG:4674)
+
+Used in this study:
+- spatial mask for the SPEI workflow;
+- spatial domain for hydroclimatic analyses;
+- cartographic boundary in figures.
+
+The original IBGE shapefile is not redistributed in this repository.
+
+
+## MapBiomas land-use and land-cover data
+
+We obtained annual land-use and land-cover data from MapBiomas Brazil Collection 11.
+
+Provider:
+MapBiomas
+
+Collection:
+Collection 11
+
+Spatial product:
+Brazil annual land-use and land-cover coverage raster
+
+Reference years used in the study:
+- 1985
+- 1995
+- 2005
+- 2015
+- 2024
+
+The annual raster files follow the URL pattern:
+
+`https://storage.googleapis.com/mapbiomas-public/initiatives/brasil/collection11/lulc/coverage/brazil_coverage/brazil_coverage-col11_<YEAR>.tif`
+
+For example, the 2024 raster is available at:
+
+https://storage.googleapis.com/mapbiomas-public/initiatives/brasil/collection11/lulc/coverage/brazil_coverage/brazil_coverage-col11_2024.tif
+
+The original MapBiomas raster files are not redistributed in this repository.
 
 
