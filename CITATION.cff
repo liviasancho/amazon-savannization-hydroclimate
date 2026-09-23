@@ -7,9 +7,12 @@ authors:
   - family-names: "Sancho"
     given-names: "Lívia"
     orcid: "https://orcid.org/0000-0001-9925-4841"
-  - family-names: "SOBRENOME-CITAÇÃO"
-    given-names: "NOME"
-    orcid: "ORCID"
+  - family-names: "Bazzanela"
+    given-names: "Anna"
+    orcid: https://orcid.org/0000-0002-8736-8873
+  - family-names: "Faleiro"
+    given-names: "Giovana"
+    orcid: "https://orcid.org/0000-0002-2929-9056"
 
 repository-code: "https://github.com/SEU_USUARIO/amazon-savannization-hydroclimate"
 
