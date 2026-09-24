@@ -11,14 +11,14 @@ dependencies:
   - xarray>=2024.5
   - dask
   - netcdf4>=1.7
-  - h5netcdf
   - matplotlib
   - cartopy
   - geopandas
   - shapely>=2.0
   - pyproj
-  - xclim
-  - regionmask
-  - openpyxl
   - pytest
   - pip
+  - xclim=0.61.1
+  - regionmask=0.13.0
+  - h5netcdf=1.8.1
+  - openpyxl=3.1.5
