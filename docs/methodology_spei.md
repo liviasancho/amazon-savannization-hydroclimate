@@ -1,6 +1,6 @@
 # SPEI methodology
 
-The Standardized Precipitation-Evapotranspiration Index (SPEI) was calculated over the Brazilian Legal Amazon using precipitation (pr) and reference evapotranspiration (ETo) from the Brazilian Daily Weather Gridded Data (BR-DWGD), version 3.2.4. Daily fields covering 1961–2025 were used, and 1981–2010 was adopted as the reference period for distribution fitting. The BR-DWGD dataset methodology is described by [Xavier et al. (2022)](https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/joc.7731).
+The Standardized Precipitation-Evapotranspiration Index (SPEI) was calculated over the Brazilian Legal Amazon using precipitation (pr) and reference evapotranspiration (ETo) from the Brazilian Daily Weather Gridded Data (BR-DWGD), version 3.2.4. We used daily fields covering 1961–2025 and adopted 1981–2010 as the reference period for distribution fitting. [Xavier et al. (2022)](https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/joc.7731) describes the BR-DWGD dataset methodology.
 
 The adopted formulation follows the SPEI structure proposed by [Vicente-Serrano et al. (2010)](https://journals.ametsoc.org/view/journals/clim/23/7/2009jcli2909.1.xml): climatic water balance, accumulation at different time scales, probabilistic fitting, and transformation to a standard normal distribution. The choice of unbiased PWMs for distribution fitting follows the subsequent recommendation by [Beguería et al. (2014)](https://doi.org/10.1002/joc.3887). [Greenwood et al. (1979)](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/WR015i005p01049) and [Hosking (1990)](https://academic.oup.com/jrsssb/article/52/1/105/7027905) provide the theoretical basis for probability-weighted moments and L-moments.
 
@@ -54,7 +54,7 @@ The pipeline calculates values ​​for k = 1, 3, 6, and 12 months. Consequentl
 
 ## Probability distribution
 
-For each timescale, we fit the distribution independently for each grid point and calendar month. Thus, January values ​​are fitted against the Januarys of the calibration period, February values ​​against the Februarys, and so on. Based on the 1981–2010 period, each monthly fit comprises 30 values ​​when the series is complete.
+For each timescale, we fit the distribution independently for each grid point and calendar month. Thus, we fit January values against the Januarys of the calibration period, February values ​​against the Februarys, and so on. Based on the 1981–2010 period, each monthly fit comprises 30 values ​​when the series is complete.
 The three-parameter log-logistic distribution is used with the Generalized Logistic (GLO) parameterization, following the formulation employed in the SPEI methodology. We estimate parameters using unbiased probability-weighted moments (ub-PWM), as recommended by [Beguería et al. (2014)](https://doi.org/10.1002/joc.3887).
 
 ## Unbiased probability-weighted moments and L-moments
