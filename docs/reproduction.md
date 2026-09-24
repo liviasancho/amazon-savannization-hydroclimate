@@ -45,16 +45,46 @@ python scripts/spei/run_spei_brdwgd.py \
     --save-monthly-balance
 ```
 
-### 5. Calculate climate-extreme indices
+### 5. Calculate climate-extreme indices and Pettitt change points
+
+The workflow uses the three original BR-DWGD precipitation files and the three
+original BR-DWGD daily maximum temperature files directly. No concatenated
+intermediate input file is required.
+
+```bash
+python scripts/climate_extremes/calculate_climate_extremes_and_pettitt.py \
+    --precipitation-files \
+        /path/to/pr_19610101_19801231_BR-DWGD_UFES_UTEXAS_v_3.2.4.nc \
+        /path/to/pr_19810101_20001231_BR-DWGD_UFES_UTEXAS_v_3.2.4.nc \
+        /path/to/pr_20010101_20251231_BR-DWGD_UFES_UTEXAS_v_3.2.4.nc \
+    --tasmax-files \
+        /path/to/Tmax_19610101_19801231_BR-DWGD_UFES_UTEXAS_v_3.2.4.nc \
+        /path/to/Tmax_19810101_20001231_BR-DWGD_UFES_UTEXAS_v_3.2.4.nc \
+        /path/to/Tmax_20010101_20251231_BR-DWGD_UFES_UTEXAS_v_3.2.4.nc \
+    --arc-shapefile \
+        data/derived/deforestation_arc/deforestation_arc_2024.shp \
+    --output-dir \
+        outputs/climate_extremes
+```
+
+The workflow produces annual gridded WSDI, SU35, TXx, CDD, R1mm and PRCPTOT
+fields, Arc-averaged annual series, Pettitt change-point results and associated
+figures.
 
 
-### 6. Calculate Pettitt change points
+### 6. Generate KDE comparison
+
+```bash
+python scripts/climate_extremes/plot_climate_extremes_kde.py \
+    --indices-dir outputs/climate_extremes/indices \
+    --arc-shapefile \
+        data/derived/deforestation_arc/deforestation_arc_2024.shp \
+    --output-dir \
+        outputs/climate_extremes/kde
+```
 
 
-### 7. Generate KDE comparison
-
-
-### 8. Generate atmospheric blocking with RiskClima
+### 7. Generate atmospheric blocking with RiskClima
 
 Follow the RiskClima blocking workflow documented in:
 
@@ -68,7 +98,7 @@ The downstream analysis requires:
 daily_blocking_series.csv
 ```
 
-### 9. Run blocking–SPEI analysis
+### 8. Run blocking–SPEI analysis
 
 ```bash
 python scripts/analysis/hydroclimate_blocking_spei_analysis.py \
@@ -83,13 +113,13 @@ python scripts/analysis/hydroclimate_blocking_spei_analysis.py \
         total north north_h1 north_h2 south south_h1 south_h2
 ```
 
-### 10. Obtain/process MapBiomas
+### 9. Obtain/process MapBiomas
 
 
-### 11. [later] Landsat LST workflow
+### 10. [later] Landsat LST workflow
 
 
-### 12. Expected outputs
+### 11. Expected outputs
 
 The workflow generates:
 
