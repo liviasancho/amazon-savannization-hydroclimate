@@ -20,7 +20,8 @@ Six annual climate-extreme indices were calculated:
 - R1mm – annual number of days with precipitation ≥ 1 mm day−1;
 - PRCPTOT – annual precipitation accumulated on days with precipitation ≥ 1 mm day−1.
 
-We performed the calculations using `xclim`.
+We performed the calculations using `xclim`. The climate-extreme calculations used `xclim` version 0.61.1. We calculated all six indices for calendar years over 1961–2025.
+
 
 ## WSDI reference climatology
 
