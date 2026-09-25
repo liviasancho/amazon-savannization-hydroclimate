@@ -109,3 +109,33 @@ deforestation_arc_2024.shx
 deforestation_arc_2024.dbf
 deforestation_arc_2024.prj
 deforestation_arc_2024.cpg
+```
+
+
+## Use in the study
+
+The Arc polygon was used to:
+
+- define the principal study region associated with the recent deforestation frontier;
+- spatially aggregate annual climate-extreme indices;
+- calculate cosine-latitude-weighted regional climate-index means;
+- compare climate-extreme distributions between 1985–2004 and 2005–2025;
+- perform Pettitt change-point analyses on regional climate-index time series;
+- provide spatial context for comparisons among land-use change, climate extremes, drought, and atmospheric-circulation changes.
+
+
+## Detailed methodology
+
+A full description of the Arc construction procedure is available in:
+
+```text
+docs/methodology_deforestation_arc.md
+```
+
+
+## Provenance
+
+The municipal boundaries and PRODES raster are external datasets and are not redistributed in this repository.
+
+The Arc polygon stored here is a derived product created for this study.
+
