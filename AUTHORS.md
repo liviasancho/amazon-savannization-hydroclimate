@@ -88,17 +88,20 @@ Contributions:
 - Writing, review, and editing of the manuscript.
 
 
-### Adriana Monteiro
+## Adriana Monteiro
 
 Contributions:
 
 - Data curation for the land-surface-temperature analysis;
-- Methodological development of the land-surface-temperature workflow;
-- Processing of Landsat-derived land-surface-temperature data;
-- Spatial analysis of land-surface-temperature patterns in southeastern Amazonia;
-- Visualization of land-surface-temperature changes;
-- Preparation of land-surface-temperature figures;
-- Interpretation of surface thermal-stress patterns in relation to vegetation loss, land-use change, and hydroclimatic stress.
+- Acquisition and selection of Landsat 8 Collection 2 Level-2 products;
+- Selection of representative Landsat scenes for 2013, 2020, and 2026;
+- Quality masking using Landsat quality information;
+- Processing of the `ST_B10` Surface Temperature Science Product;
+- Conversion of Landsat surface-temperature values to degrees Celsius;
+- Spatial clipping of land-surface-temperature data to the selected southeastern Amazonian study area;
+- Classification and cartographic representation of surface-temperature fields;
+- Preparation of the land-surface-temperature maps used in the manuscript;
+- Visualization and methodological development of the land-surface-temperature analysis.
 
 
 ## Repository contributions
