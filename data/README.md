@@ -221,7 +221,7 @@ The original IBGE shapefile is not redistributed in this repository.
 
 ## 4. IBGE municipal boundaries
 
-Municipal boundaries are used in the construction of the study-derived Arc of Deforestation.
+Municipal boundaries are used to construct the study-derived Arc of Deforestation.
 
 Provider:
 
@@ -256,14 +256,14 @@ Municipality identification field used:
 Nome
 ```
 
-The national municipal layer was clipped to the Brazilian Legal Amazon before the deforestation analysis.
+We clipped the national municipal layer to the Brazilian Legal Amazon before the deforestation analysis.
 
 The original IBGE municipal boundary file is not redistributed in this repository.
 
 
 ## 5. PRODES deforestation
 
-Deforestation data used to construct the Arc of Deforestation were obtained from PRODES.
+We obtained the deforestation data used to construct the Arc of Deforestation from PRODES.
 
 Provider:
 
@@ -283,7 +283,7 @@ Use in the study:
 - ranking municipalities by contribution to total deforestation;
 - definition of the study-derived Arc of Deforestation.
   
-The PRODES raster is not redistributed in this repository.
+This repository does not include the PRODES raster.
 
 Detailed Arc-construction methodology:
 ```text
@@ -297,7 +297,7 @@ The Arc of Deforestation polygon used in this study is a derived spatial product
 - IBGE 2025 municipal boundaries;
 - the IBGE Legal Amazon spatial domain.
   
-The initial municipal selection contained 82 municipalities cumulatively representing:
+The initial municipal selection contained 82 municipalities, cumulatively representing:
 ```text
 469,986.33 ha
 ```
@@ -312,7 +312,7 @@ of mapped 2024 deforestation, corresponding to:
 75.0592%
 ```
 
-The largest spatially connected component among these municipalities was retained to define the final continuous Arc polygon.
+We retained the largest spatially connected component among these municipalities to define the final continuous Arc polygon.
 
 Derived files are stored in:
 ```text
@@ -332,7 +332,7 @@ docs/methodology_deforestation_arc.md
 
 ## 7. MapBiomas land-use and land-cover data
    
-Annual land-use and land-cover rasters were obtained from MapBiomas Brazil Collection 11.
+We obtained annual land-use and land-cover rasters from MapBiomas Brazil Collection 11.
 
 Provider:
 
@@ -379,7 +379,7 @@ The original WGS 84 geographic raster grid was preserved:
 EPSG:4326
 ```
 
-Class areas were calculated using latitude-dependent geodesic pixel areas on the WGS 84 ellipsoid.
+We calculated class areas using latitude-dependent geodesic pixel areas on the WGS 84 ellipsoid.
 
 Detailed workflow:
 ```text
@@ -396,11 +396,59 @@ The original MapBiomas rasters are not redistributed in this repository.
 
 ## 8. Landsat land-surface temperature
 
-The manuscript also includes a land-surface-temperature analysis based on Landsat data.
+We performed land-surface-temperature analyses using Landsat 8 Collection 2 Level-2 Surface Temperature Science Products.
 
-The complete Landsat/LST data provenance and processing workflow will be documented after the corresponding analysis metadata are incorporated into the repository.
+Provider:
 
-This section will be completed before the archived software release associated with the manuscript.
+U.S. Geological Survey (USGS)
+
+Access platform:
+
+USGS EarthExplorer
+
+Sensor:
+
+Landsat 8 OLI/TIRS
+
+Product:
+
+Collection 2 Level-2 Surface Temperature Science Product
+
+Surface-temperature band:
+
+`ST_B10`
+
+Scenes used:
+
+| Year | Product ID |
+|---:|---|
+| 2013 | `LC08_L2SP_230067_20130930_20200912_02_T1` |
+| 2020 | `LC08_L2SP_001059_20200101_20200823_02_T1` |
+| 2026 | `LC08_L2SP_233069_20260331_20260407_02_T1` |
+
+Processing software:
+
+`QGIS 3.34`
+
+Main processing steps:
+
+- quality masking;
+- extraction of `ST_B10`;
+- conversion to physical surface temperature;
+- conversion from Kelvin to Celsius;
+- clipping to the selected area of interest;
+- cartographic classification;
+- generation of the final LST maps.
+
+Detailed methodology:
+
+`docs/methodology_lst.md`
+
+Processing workflow:
+
+`workflow/landsat_lst/README.md`
+
+The original Landsat products are not redistributed in this repository.
 
 
 ## Data redistribution policy
