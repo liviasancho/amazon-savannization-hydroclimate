@@ -6,15 +6,17 @@ We analyzed land surface temperature (LST) over a representative sector of south
 
 The analysis was designed to characterize surface thermal conditions in an area affected by intense land-use change, agricultural expansion, and hydroclimatic stress.
 
-## Study area
 
-The analyzed sector is located in southeastern Brazilian Legal Amazonia, within the Arc of Deforestation.
+## Study areas
 
-The approximate central coordinates of the mapped area are:
+The LST analysis focused on representative critical sectors of southeastern Brazilian Legal Amazonia and the Arc of Deforestation.
 
-`10°36'01.00"S, 49°50'54.57"W`
+Rather than enforcing an identical Landsat footprint for all analyzed years, scenes were selected to represent locations exhibiting particularly high surface-temperature conditions and overlapping areas highlighted by the other environmental analyses in the study.
 
-We selected this area as a representative region showing strong land-use transformation and elevated surface thermal conditions.
+The selected sectors therefore represent comparable high-stress environments within the deforestation frontier, but they should not be interpreted as an identical spatial footprint observed repeatedly through time.
+
+Querência and its surrounding region were used as an important geographic reference because this sector lies within a highly transformed portion of the southern and southeastern Amazonian frontier.
+
 
 ## Data source
 
@@ -38,13 +40,13 @@ Surface-temperature band:
 
 ## Landsat scenes
 
-The following Landsat 8 products were used in the analysis:
+The following Landsat 8 Collection 2 Level-2 products were used:
 
-| Year | Landsat product ID | Sensor |
-|---:|---|---|
-| 2013 | `LC08_L2SP_230067_20130930_20200912_02_T1` | Landsat 8 OLI/TIRS |
-| 2020 | `LC08_L2SP_001059_20200101_20200823_02_T1` | Landsat 8 OLI/TIRS |
-| 2026 | `LC08_L2SP_233069_20260331_20260407_02_T1` | Landsat 8 OLI/TIRS |
+| Year | Landsat product ID | Acquisition date | Sensor |
+|---:|---|---|---|
+| 2013 | `LC08_L2SP_230067_20130930_20200912_02_T1` | 2013-09-30 | Landsat 8 OLI/TIRS |
+| 2020 | `LC08_L2SP_223068_20201002_20201015_02_T1` | 2020-10-02 | Landsat 8 OLI/TIRS |
+| 2026 | `LC08_L2SP_233069_20260331_20260407_02_T1` | 2026-03-31 | Landsat 8 OLI/TIRS |
 
 The acquisition dates used in the analysis were selected to represent high-temperature conditions during the dry season in the southern Amazon region.
 
@@ -58,17 +60,19 @@ The 2020 acquisition date should be verified against the Landsat product identif
 
 ## Scene-selection criteria
 
-Several candidate Landsat scenes were evaluated.
+## Scene-selection criteria
 
-Scenes were selected according to the following criteria:
+Multiple Landsat scenes were evaluated for each analyzed year.
 
-- representation of high-temperature conditions for the corresponding year;
-- relevance to the dry-season thermal-stress context of southern Amazonia;
-- low cloud coverage, preferentially below approximately 10–20%;
-- adequate spatial coverage of the selected area of interest;
-- representation of locations showing strong surface-temperature anomalies in the analyzed region.
+Scene selection prioritized:
 
-We consulted meteorological information from official and operational sources when selecting representative high-temperature periods.
+- periods associated with particularly high temperatures during the corresponding year;
+- low cloud contamination, preferentially below approximately 10–20%;
+- adequate coverage of sectors within the southern and southeastern Brazilian Legal Amazon and the Arc of Deforestation;
+- areas exhibiting pronounced surface thermal conditions;
+- geographic consistency with municipalities and environmental-pressure areas identified in the other analyses of the study.
+
+The selected scenes were therefore intended to characterize representative critical thermal conditions within the deforestation frontier rather than to provide repeated observations of one fixed Landsat footprint.
 
 ## Cloud and quality masking
 
@@ -114,18 +118,15 @@ The main processing sequence was:
 8. classify temperatures into intervals for cartographic representation;
 9. generate the final maps used in the manuscript.
 
-## Temporal representation
+## Temporal and spatial representation
 
-Each mapped year corresponds to one individual Landsat scene acquired on a specific date.
+Each analyzed year is represented by one individual Landsat scene acquired on a specific date.
 
-The maps therefore represent selected scene-based surface-temperature conditions rather than:
+The three scenes do not necessarily represent the same Landsat path/row or an identical spatial footprint. They were selected as representative high-temperature sectors within the broader southern and southeastern Amazonian deforestation frontier.
 
-- annual mean LST;
-- seasonal mean LST;
-- temporal composites;
-- multi-scene mosaics.
+Accordingly, the analysis should be interpreted as a comparison of representative critical surface-temperature conditions observed in 2013, 2020, and 2026, rather than as a pixel-by-pixel temporal change analysis of the same geographic area.
 
-Consequently, interpret differences among years as differences among selected representative scenes rather than as a continuous annual temperature trend.
+The maps are also not annual means, seasonal means, mosaics, or multi-scene composites.
 
 ## Cartographic representation
 
