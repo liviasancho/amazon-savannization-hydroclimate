@@ -26,21 +26,26 @@ Surface-temperature band:
 
 ## Scenes used
 
-| Year | Product ID |
-|---:|---|
-| 2013 | `LC08_L2SP_230067_20130930_20200912_02_T1` |
-| 2020 | `LC08_L2SP_001059_20200101_20200823_02_T1` |
-| 2026 | `LC08_L2SP_233069_20260331_20260407_02_T1` |
+## Scenes used
 
-We are verifying the exact 2020 acquisition date before releasing the archived repository.
+| Year | Product ID | Acquisition date | Path/Row |
+|---:|---|---|---|
+| 2013 | `LC08_L2SP_230067_20130930_20200912_02_T1` | 2013-09-30 | 230/067 |
+| 2020 | `LC08_L2SP_223068_20201002_20201015_02_T1` | 2020-10-02 | 223/068 |
+| 2026 | `LC08_L2SP_233069_20260331_20260407_02_T1` | 2026-03-31 | 233/069 |
 
-## Area of interest
 
-The analysis focuses on a representative sector of southeastern Brazilian Legal Amazonia within the Arc of Deforestation.
 
-Approximate central coordinate:
+## Geographic selection
 
-`10°36'01.00"S, 49°50'54.57"W`
+The workflow does not use one fixed Landsat footprint across all three years.
+
+For each year, a representative critical scene was selected within the southern and southeastern Brazilian Legal Amazon and the Arc of Deforestation.
+
+Selection favored areas displaying strong surface thermal conditions and overlapping municipalities or sectors highlighted by the land-use and hydroclimatic analyses.
+
+The scenes should therefore be treated as representative case-study locations within the broader deforestation frontier rather than as repeated observations of an identical geographic footprint.
+
 
 ## Workflow
 
