@@ -99,7 +99,7 @@ D = P - ETo
 
 SPEI is calculated at:
 ```text
-1, 3, 6 and 12 months
+1, 3, 6, and 12 months
 ```
 
 Calibration period:
@@ -420,11 +420,13 @@ Surface-temperature band:
 
 Scenes used:
 
-| Year | Product ID |
-|---:|---|
-| 2013 | `LC08_L2SP_230067_20130930_20200912_02_T1` |
-| 2020 | `LC08_L2SP_001059_20200101_20200823_02_T1` |
-| 2026 | `LC08_L2SP_233069_20260331_20260407_02_T1` |
+| Year | Product ID | Acquisition date |
+|---:|---|---|
+| 2013 | `LC08_L2SP_230067_20130930_20200912_02_T1` | 2013-09-30 |
+| 2020 | `LC08_L2SP_223068_20201002_20201015_02_T1` | 2020-10-02 |
+| 2026 | `LC08_L2SP_233069_20260331_20260407_02_T1` | 2026-03-31 |
+
+The scenes represent selected critical thermal conditions within the southern and southeastern Amazonian deforestation frontier. They do not share an identical Landsat footprint and are therefore not intended for pixel-by-pixel temporal comparison.
 
 Processing software:
 
