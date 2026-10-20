@@ -44,3 +44,12 @@ coordinates:
 2. 08°42'11"S, 52°34'01"W
 3. 08°47'24"S, 47°35'32"W
 4. 13°16'29"S, 47°26'58"W
+
+
+## Release status
+
+This limitation is known and documented for repository release `v1.0.0`.
+
+The limitation concerns external-provider catalogue availability and does not imply that replacement Landsat scenes were introduced into the analyses archived in this release.
+
+If USGS provides additional clarification or restored catalogue access, the corresponding metadata will be incorporated into a subsequent repository release.
