@@ -1,5 +1,8 @@
 # Amazon Savannization Hydroclimate
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23511898.svg)](https://doi.org/10.5281/zenodo.23511898)
+
+
 Reproducible workflows, methodological documentation, and derived spatial data supporting analyses of environmental change across the Brazilian Legal Amazon.
 
 The repository accompanies a scientific study integrating land-use change, climate extremes, drought, atmospheric blocking, and land-surface temperature.
