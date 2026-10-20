@@ -52,14 +52,15 @@ https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/amazo
 
 The IBGE Legal Amazon polygon was used as the clipping boundary for all MapBiomas rasters.
 
-Software
+## Software
+
 ArcGIS Pro 3.7
 
-Processing workflow
+## Processing workflow
 
 The same procedure was applied independently to each reference year.
 
-1. Download annual raster
+### 1. Download annual raster
 
 Download the MapBiomas Collection 11 raster corresponding to the reference year.
 
@@ -69,11 +70,11 @@ For example:
 brazil_coverage-col11_2024.tif
 ```
 
-2. Load the raster in ArcGIS Pro
+### 2. Load the raster in ArcGIS Pro
 
 Open the annual MapBiomas raster in ArcGIS Pro 3.7 together with the 2024 IBGE Legal Amazon boundary.
 
-4. Clip to the Brazilian Legal Amazon
+### 3. Clip to the Brazilian Legal Amazon
 
 Use the ArcGIS Pro Clip Raster tool to restrict the MapBiomas raster to the Brazilian Legal Amazon.
 
@@ -86,7 +87,7 @@ EPSG:4326
 
 No raster reprojection is performed.
 
-4. Preserve the original categorical grid
+### 4. Preserve the original categorical grid
    
 Raster reprojection was intentionally avoided because categorical rasters require resampling.
 
@@ -94,11 +95,11 @@ Even when nearest-neighbour resampling is used, reprojection changes the raster 
 
 The analysis therefore preserves the original MapBiomas grid and calculates pixel area directly on the geographic grid.
 
-6. Identify land-cover classes
+### 5. Identify land-cover classes
    
 Each raster pixel is assigned to the MapBiomas class represented by its Value code.
 
-Pixels with value 0 (NoData) are excluded.
+Pixels with value `0` (`NoData`) are excluded.
 
 The analysed classes are:
 
@@ -119,7 +120,7 @@ The analysed classes are:
 
 The raster attribute-table Count field provides the number of pixels assigned to each class.
 
-6. Calculate pixel area by raster row
+### 6. Calculate pixel area by raster row
    
 Because the raster is stored in geographic coordinates, pixel area varies with latitude.
 
@@ -136,13 +137,13 @@ number of class pixels in the row
 geodesic area of one raster cell at that latitude
 ```
 
-7. Sum class area across the Legal Amazon
+### 7. Sum class area across the Legal Amazon
    
 For each land-cover class, the row-specific areas are summed across the complete Brazilian Legal Amazon domain.
 
 Final class areas are converted from square metres to square kilometres.
 
-9. Validate total mapped area
+### 8. Validate total mapped area
     
 The resulting total mapped area is approximately:
 
@@ -152,7 +153,7 @@ The resulting total mapped area is approximately:
 
 which is consistent with the geographic extent of the Brazilian Legal Amazon.
 
-9. Compare reference years
+### 9. Compare reference years
     
 For each reference year, class areas are stored in km².
 
