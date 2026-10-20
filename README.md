@@ -216,8 +216,6 @@ Software citation metadata are provided in:
 CITATION.cff
 ```
 
-The release associated with the manuscript will be archived on Zenodo and assigned a DOI.
-
 ## License
 
 This software is distributed under the Apache License 2.0.
@@ -229,3 +227,9 @@ Scientific, software, data-processing, visualization, and manuscript contributio
 ```text
 AUTHORS.md
 ```
+
+## Archived release
+
+Version `v1.0.0` is permanently archived on Zenodo:
+
+`https://doi.org/10.5281/zenodo.23511898`
