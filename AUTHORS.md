@@ -88,7 +88,7 @@ Contributions:
 - Writing, review, and editing of the manuscript.
 
 
-## Adriana Monteiro
+### Adriana Monteiro
 
 Contributions:
 
@@ -120,4 +120,4 @@ The repository currently documents workflows associated with:
 - the Arc of Deforestation;
 - land-surface temperature.
 
-Additional technical details will be incorporated as the remaining workflows are finalized.
+Known data-provenance limitations and items awaiting external-provider clarification are documented explicitly in the repository and may be updated in subsequent releases.
