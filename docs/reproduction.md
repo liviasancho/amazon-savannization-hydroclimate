@@ -1,55 +1,60 @@
-# Data
+# Reproducing the analyses
 
-## Download BR-DWGD
+## 1. Create the software environment
 
-BR-DWGD files must currently be obtained from the official dataset page:
-
-https://sites.google.com/site/alexandrecandidoxavierufes/brazilian-daily-weather-gridded-data
-
-Download the six NetCDF files listed in `data/README.md`.
-
-This repository does not include an automated download for BR-DWGD files because the official distribution URL may change, and the workflow relies only on provider-supported access methods.
-
-# Analysis
-
-## Reproducing the hydroclimatic analyses
-
-### 1. Create the environment
+From the repository root:
 
 ```bash
 conda env create -f environment.yml
-conda activate amazon-hydroclimate
+conda activate amazon-savannization
 ```
 
-### 2. Obtain spatial boundaries
+## 2. Obtain the required datasets
 
+Data providers, versions, filenames, and access locations are documented in:
 
-### 3. Obtain BR-DWGD data
-
-Download the required precipitation and reference-evapotranspiration files listed in:
-
-```bash
+```text
 data/README.md
 ```
 
-### 4. Calculate SPEI
+Original third-party datasets are not redistributed in this repository.
 
-Example:
+## 3. Obtain the Brazilian Legal Amazon boundary
+
+Download the 2024 IBGE Legal Amazon boundary described in:
+
+```text
+data/README.md
+```
+
+This boundary is used by the SPEI, MapBiomas, hydroclimatic, and cartographic workflows.
+
+## 4. Calculate SPEI
+
+Download the three BR-DWGD precipitation files and three BR-DWGD reference-evapotranspiration files listed in:
+
+```text
+data/README.md
+```
+
+Run:
 
 ```bash
 python scripts/spei/run_spei_brdwgd.py \
-    --precipitation-dir /path/to/pr \
-    --eto-dir /path/to/eto \
-    --shapefile /path/to/legal_amazon.shp \
+    --precipitation-dir /path/to/pr_directory \
+    --eto-dir /path/to/eto_directory \
+    --shapefile /path/to/Limites_Amazonia_Legal_2024.shp \
     --output-dir /path/to/spei_results \
     --save-monthly-balance
 ```
 
-### 5. Calculate climate-extreme indices and Pettitt change points
+The default scales are: 1, 3, 6 and 12
 
-The workflow uses the three original BR-DWGD precipitation files and the three
-original BR-DWGD daily maximum temperature files directly. No concatenated
-intermediate input file is required.
+The workflow generates one NetCDF file for each SPEI scale and optionally the monthly climatic water balance.
+
+## 5. Calculate climate-extreme indices and Pettitt change points
+
+The climate-extreme workflow reads the three original BR-DWGD precipitation files and the three original BR-DWGD Tmax files directly.
 
 ```bash
 python scripts/climate_extremes/calculate_climate_extremes_and_pettitt.py \
@@ -67,12 +72,22 @@ python scripts/climate_extremes/calculate_climate_extremes_and_pettitt.py \
         outputs/climate_extremes
 ```
 
-The workflow produces annual gridded WSDI, SU35, TXx, CDD, R1mm and PRCPTOT
-fields, Arc-averaged annual series, Pettitt change-point results and associated
-figures.
+The workflow generates:
 
+```text
+outputs/climate_extremes/
+├── indices/
+│   ├── WSDI_annual.nc
+│   ├── SU35_annual.nc
+│   ├── TXx_annual.nc
+│   ├── CDD_annual.nc
+│   ├── R1mm_annual.nc
+│   ├── PRCPTOT_annual.nc
+│   └── pettitt_breakpoints_arc_deforestation.xlsx
+└── figures/
+```
 
-### 6. Generate KDE comparison
+## 6. Generate climate-extreme KDE comparisons
 
 ```bash
 python scripts/climate_extremes/plot_climate_extremes_kde.py \
@@ -83,52 +98,106 @@ python scripts/climate_extremes/plot_climate_extremes_kde.py \
         outputs/climate_extremes/kde
 ```
 
+## 7. Generate atmospheric blocking data
 
-### 7. Generate atmospheric blocking with RiskClima
+Atmospheric blocking is generated externally using RiskClima.
 
-Follow the RiskClima blocking workflow documented in:
+Follow:
 
-```bash
+```text
 workflow/blocking/README.md
 ```
 
-The downstream analysis requires:
+The downstream hydroclimatic analysis requires:
 
-```bash
+```text
 daily_blocking_series.csv
 ```
 
-### 8. Run blocking–SPEI analysis
+## 8. Run the blocking–SPEI analysis
 
 ```bash
 python scripts/analysis/hydroclimate_blocking_spei_analysis.py \
     --blocking-csv /path/to/daily_blocking_series.csv \
-    --spei1 /path/to/spei_1.nc \
-    --spei3 /path/to/spei_3.nc \
-    --spei6 /path/to/spei_6.nc \
-    --spei12 /path/to/spei_12.nc \
-    --amazon-shapefile /path/to/legal_amazon.shp \
-    --output-dir /path/to/results \
+    --spei1 /path/to/spei_1_BR-DWGD_AmazoniaLegal_1961_2025.nc \
+    --spei3 /path/to/spei_3_BR-DWGD_AmazoniaLegal_1961_2025.nc \
+    --spei6 /path/to/spei_6_BR-DWGD_AmazoniaLegal_1961_2025.nc \
+    --spei12 /path/to/spei_12_BR-DWGD_AmazoniaLegal_1961_2025.nc \
+    --amazon-shapefile /path/to/Limites_Amazonia_Legal_2024.shp \
+    --output-dir /path/to/hydroclimate_results \
     --spatial-blocking-regions \
         total north north_h1 north_h2 south south_h1 south_h2
 ```
 
-### 9. Obtain/process MapBiomas
+Default statistical settings are documented in:
 
+```text
+docs/methodology_hydroclimate_analysis.md
+```
 
-### 10. [later] Landsat LST workflow
+The analysis generates tables, figures, NetCDF outputs, and:
 
-
-### 11. Expected outputs
-
-The workflow generates:
-
-```bash
-tables/
-figures/
-netcdf/
+```text
 analysis_settings.json
 ```
 
-The `analysis_settings.json` file records the principal statistical settings used in each execution.
+which records the principal settings used in each execution.
 
+## 9. Reproduce the MapBiomas analysis
+
+The MapBiomas analysis was performed interactively in ArcGIS Pro 3.7 rather than through a Python script.
+
+Follow the documented procedure in:
+
+```text
+workflow/mapbiomas/README.md
+```
+
+Scientific methodology is documented in:
+
+```text
+docs/methodology_land_cover.md
+```
+
+## 10. Reproduce the Landsat LST processing
+
+The LST workflow was performed in QGIS 3.34.
+
+Follow:
+
+```text
+workflow/landsat_lst/README.md
+```
+
+Scientific methodology:
+
+```text
+docs/methodology_lst.md
+```
+
+Known USGS catalogue-availability limitations are documented in:
+
+```text
+docs/data_availability_notes.md
+```
+
+Because the exact originally downloaded 2013 and 2026 products could not be re-verified in the current USGS catalogue during repository preparation, exact reproduction of those two original downloads may depend on future clarification from USGS.
+
+## 11. Derived Arc of Deforestation
+
+The derived spatial product used in the climate-extreme analysis is already included in:
+
+```text
+data/derived/deforestation_arc/
+```
+
+Its construction is documented in:
+
+```text
+docs/methodology_deforestation_arc.md
+```
+and:
+
+```text
+data/derived/deforestation_arc/README.md
+```
