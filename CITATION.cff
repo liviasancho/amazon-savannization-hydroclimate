@@ -7,18 +7,23 @@ authors:
   - family-names: "Sancho"
     given-names: "Lívia"
     orcid: "https://orcid.org/0000-0001-9925-4841"
+
   - family-names: "Bazzanela"
     given-names: "Anna"
     orcid: https://orcid.org/0000-0002-8736-8873
+
   - family-names: "Faleiro"
     given-names: "Giovana"
     orcid: "https://orcid.org/0000-0002-2929-9056"
+
   - family-names: "Luiz-Silva"
     given-names: "Wanderson"
     orcid: "https://orcid.org/0000-0001-8589-7301"
+
   - family-names: "Leal Filho"
     given-names: "Walter"
     orcid: "https://orcid.org/0000-0002-1241-5225"
+
   - family-names: "Monteiro"
     given-names: "Adriana"
     orcid: "https://orcid.org/0009-0008-7104-6387"
@@ -36,11 +41,18 @@ keywords:
   - ERA5
   - BR-DWGD
   - climate extremes
+  - land-use change
+  - MapBiomas
+  - Landsat
+  - land surface temperature
   - savannization
+  - reproducible research
+
 
 abstract: >
-  Reproducible software workflows for calculating multiscalar SPEI and
-  evaluating hydroclimatic changes and atmospheric-blocking relationships
-  in the Brazilian Legal Amazon.
+  Reproducible workflows, methodological documentation, and derived spatial
+  data supporting analyses of hydroclimatic change, climate extremes,
+  atmospheric blocking, land-use and land-cover change, and land-surface
+  temperature across the Brazilian Legal Amazon.
 
-version: "0.1.0"
+version: "1.0.0"
