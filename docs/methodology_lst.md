@@ -2,37 +2,44 @@
 
 ## Objective
 
-We analyzed land surface temperature (LST) over a representative sector of southeastern Brazilian Legal Amazonia within the Arc of Deforestation.
+We analysed land surface temperature (LST) in representative critical sectors of the southern and southeastern Brazilian Legal Amazon within the broader Arc of Deforestation.
 
-The analysis was designed to characterize surface thermal conditions in an area affected by intense land-use change, agricultural expansion, and hydroclimatic stress.
+The analysis was designed to characterise surface thermal conditions in areas affected by land-use transformation and hydroclimatic stress.
 
+## Geographic selection
 
-## Study areas
+The LST analysis did not enforce one identical Landsat footprint for all analysed years.
 
-The LST analysis focused on representative critical sectors of southeastern Brazilian Legal Amazonia and the Arc of Deforestation.
+Instead, scenes were selected to represent locations exhibiting pronounced surface-temperature conditions and overlapping sectors highlighted by the other environmental analyses in the study.
 
-Rather than enforcing an identical Landsat footprint for all analyzed years, scenes were selected to represent locations exhibiting particularly high surface-temperature conditions and overlapping areas highlighted by the other environmental analyses in the study.
+The selected scenes therefore represent comparable high-stress environments within the deforestation frontier but should not be interpreted as repeated observations of one identical spatial footprint.
 
-The selected sectors therefore represent comparable high-stress environments within the deforestation frontier, but they should not be interpreted as an identical spatial footprint observed repeatedly through time.
+Querência and surrounding sectors were used as an important geographic reference within the southern and southeastern Amazonian frontier.
 
-Querência and its surrounding region were used as an important geographic reference because this sector lies within a highly transformed portion of the southern and southeastern Amazonian frontier.
+The approximate analysis extent was delimited by the following geographic coordinates:
 
+1. 13°11'21"S, 52°36'39"W
+2. 08°42'11"S, 52°34'01"W
+3. 08°47'24"S, 47°35'32"W
+4. 13°16'29"S, 47°26'58"W
+
+These coordinates document the spatial extent used to contextualise the analysed sectors rather than a common Landsat footprint shared by all three scenes.
 
 ## Data source
 
-We obtained Landsat Collection 2 Level-2 Surface Temperature products from the U.S. Geological Survey (USGS) EarthExplorer platform.
+Landsat Collection 2 Level-2 Surface Temperature products were obtained from the U.S. Geological Survey (USGS) EarthExplorer platform.
 
 Platform:
 
-USGS EarthExplorer
+`USGS EarthExplorer`
 
 Product:
 
-Landsat Collection 2 Level-2 Surface Temperature Science Product
+`Landsat Collection 2 Level-2 Surface Temperature Science Product`
 
 Sensor:
 
-Landsat 8 OLI/TIRS
+`Landsat 8 OLI/TIRS`
 
 Surface-temperature band:
 
@@ -40,43 +47,37 @@ Surface-temperature band:
 
 ## Landsat scenes
 
-The following Landsat 8 Collection 2 Level-2 products were used:
+The following products were used in the original analysis:
 
-| Year | Landsat product ID | Acquisition date | Sensor |
+| Year | Landsat product ID | Acquisition date | Path/Row |
 |---:|---|---|---|
-| 2013 | `LC08_L2SP_230067_20130930_20200912_02_T1` | 2013-09-30 | Landsat 8 OLI/TIRS |
-| 2020 | `LC08_L2SP_223068_20201002_20201015_02_T1` | 2020-10-02 | Landsat 8 OLI/TIRS |
-| 2026 | `LC08_L2SP_233069_20260331_20260407_02_T1` | 2026-03-31 | Landsat 8 OLI/TIRS |
+| 2013 | `LC08_L2SP_230067_20130930_20200912_02_T1` | 2013-09-30 | 230/067 |
+| 2020 | `LC08_L2SP_223068_20201002_20201015_02_T1` | 2020-10-02 | 223/068 |
+| 2026 | `LC08_L2SP_233069_20260331_20260407_02_T1` | 2026-03-31 | 233/069 |
 
-The acquisition dates used in the analysis were selected to represent high-temperature conditions during the dry season in the southern Amazon region.
+The 2020 scene was subsequently re-verified in the USGS catalogue.
 
-The selected dates were:
+The original locally archived products used for 2013 and 2026 could not be fully re-verified under the current USGS catalogue configuration during repository preparation. This issue is documented in:
 
-- 30 September 2013;
-- [TO BE CONFIRMED FOR 2020];
-- 31 March 2026.
-
-The 2020 acquisition date should be verified against the Landsat product identifier before the archived repository release.
+`docs/data_availability_notes.md`
 
 ## Scene-selection criteria
 
-## Scene-selection criteria
+Multiple candidate Landsat scenes were evaluated.
 
-Multiple Landsat scenes were evaluated for each analyzed year.
+Scene selection prioritised:
 
-Scene selection prioritized:
-
-- periods associated with particularly high temperatures during the corresponding year;
+- periods associated with high temperatures during the corresponding year;
 - low cloud contamination, preferentially below approximately 10–20%;
-- adequate coverage of sectors within the southern and southeastern Brazilian Legal Amazon and the Arc of Deforestation;
-- areas exhibiting pronounced surface thermal conditions;
-- geographic consistency with municipalities and environmental-pressure areas identified in the other analyses of the study.
+- coverage of relevant sectors of the southern and southeastern Brazilian Legal Amazon;
+- locations exhibiting pronounced surface thermal conditions;
+- spatial consistency with municipalities and environmental-pressure regions highlighted by the other analyses in the study.
 
-The selected scenes were therefore intended to characterize representative critical thermal conditions within the deforestation frontier rather than to provide repeated observations of one fixed Landsat footprint.
+The selected scenes were therefore intended to characterise representative critical thermal conditions rather than to provide a controlled repeated observation of one fixed Landsat footprint.
 
 ## Cloud and quality masking
 
-We used quality-control information from the Landsat Collection 2 Level-2 products to remove contaminated pixels.
+Quality-control information from the Landsat Collection 2 Level-2 products was used to remove contaminated observations.
 
 The `QA_PIXEL` layer was used to mask:
 
@@ -84,15 +85,15 @@ The `QA_PIXEL` layer was used to mask:
 - cloud shadows;
 - cirrus.
 
-We also excluded saturated pixels from the analysis.
+Saturated pixels were also excluded.
 
-We used only valid surface-temperature pixels remaining after quality filtering to generate the final maps.
+Only valid surface-temperature pixels remaining after quality filtering were used in the final maps.
 
 ## Surface-temperature processing
 
 The Landsat Collection 2 Level-2 `ST_B10` band was used to derive surface temperature.
 
-The digital values were converted to physical temperature using the scale factor and additive offset applied in the analysis:
+Digital values were converted to physical temperature using:
 
 `Temperature (K) = ST_B10 × 0.00341802 + 149.0`
 
@@ -106,42 +107,42 @@ Processing was performed in:
 
 `QGIS 3.34`
 
-The main processing sequence was:
+The workflow consisted of:
 
-1. download Landsat Collection 2 Level-2 scenes;
-2. apply quality masks using `QA_PIXEL`;
-3. remove saturated pixels;
-4. extract the `ST_B10` surface-temperature band;
-5. apply the Landsat scale factor and additive offset;
-6. convert temperature from Kelvin to degrees Celsius;
-7. clip the resulting LST field to the selected area of interest;
-8. classify temperatures into intervals for cartographic representation;
-9. generate the final maps used in the manuscript.
+1. downloading Landsat Collection 2 Level-2 scenes;
+2. applying quality masks using `QA_PIXEL`;
+3. excluding saturated pixels;
+4. extracting `ST_B10`;
+5. applying the temperature scale factor and additive offset;
+6. converting temperature from Kelvin to Celsius;
+7. clipping the resulting LST field to the selected area of interest;
+8. classifying temperature values into intervals for cartographic representation;
+9. generating the final maps used in the manuscript.
 
-## Temporal and spatial representation
+## Temporal and spatial interpretation
 
-Each analyzed year is represented by one individual Landsat scene acquired on a specific date.
+Each analysed year is represented by one individual Landsat scene acquired on a specific date.
 
-The three scenes do not necessarily represent the same Landsat path/row or an identical spatial footprint. They were selected as representative high-temperature sectors within the broader southern and southeastern Amazonian deforestation frontier.
+The three scenes do not necessarily represent the same Landsat path/row or an identical spatial footprint.
 
-Accordingly, the analysis should be interpreted as a comparison of representative critical surface-temperature conditions observed in 2013, 2020, and 2026, rather than as a pixel-by-pixel temporal change analysis of the same geographic area.
+Accordingly, the maps should be interpreted as representative critical surface-temperature conditions observed in 2013, 2020, and 2026 rather than as a pixel-by-pixel temporal change analysis of one fixed geographic area.
 
-The maps are also not annual means, seasonal means, mosaics, or multi-scene composites.
+The maps are not annual means, seasonal means, mosaics, or multi-scene composites.
 
 ## Cartographic representation
 
-The resulting LST fields were classified into temperature intervals for visualization.
-
-The final maps illustrate the spatial distribution and intensity of surface thermal conditions within the selected southeastern Amazonian sector.
+The resulting LST fields were classified into temperature intervals for visualisation and assembled into the final manuscript figure.
 
 ## Interpretation
 
 LST represents the thermal state of the land surface and should not be interpreted as equivalent to near-surface air temperature.
 
-The analysis is used as an indicator of spatial surface thermal stress and its relationship with land-cover transformation and hydroclimatic conditions.
+The analysis is used as an indicator of surface thermal stress in regions affected by land-cover transformation and hydroclimatic pressure.
 
-## Software
+## Data-availability limitation
 
-Processing software:
+The original 2013 and 2026 files used in the analysis are retained locally by the authors, but their exact catalogue availability is currently being clarified with USGS.
 
-`QGIS 3.34`
+No substitute scenes were introduced into the present repository release.
+
+Future releases may update the provenance information if further clarification is provided by USGS.
