@@ -53,6 +53,8 @@ SW:  13°11'21"S, 052°36'39"W
 
 SE:  13°16'29"S, 047°26'58"W
 
+These coordinates describe the broader analysis extent used to contextualise the selected scenes. They should not be interpreted as one identical Landsat footprint shared by 2013, 2020, and 2026.
+
 
 
 ## Workflow
@@ -112,13 +114,15 @@ The final manuscript figure contains the maps corresponding to:
 - 2020;
 - 2026.
 
-## Important temporal interpretation
+## Important temporal and spatial interpretation
 
 Each year is represented by an individual Landsat scene.
 
-The resulting maps are not annual or seasonal composites and should not be interpreted as annual mean land-surface temperature.
+The scenes do not necessarily share the same Landsat path/row or identical spatial footprint.
 
-They represent selected high-temperature surface conditions for the corresponding acquisition dates.
+The maps therefore represent selected critical surface-temperature conditions within the broader southern and southeastern Amazonian deforestation frontier.
+
+They are not annual or seasonal composites and should not be interpreted as a pixel-by-pixel temporal series of one fixed geographic area.
 
 ## Data-availability caveat
 
