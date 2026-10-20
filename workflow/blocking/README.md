@@ -54,14 +54,31 @@ south_h2
 
 ## Reproducibility
 
-The blocking implementation is intentionally not copied into this repository.
+The atmospheric-blocking implementation is intentionally not duplicated in this repository.
 
-The version used in the manuscript must be identified by the exact RiskClima Git commit:
+The blocking data used in the manuscript were generated with the following exact RiskClima revision:
 
 ```text
-RiskClima commit: b1a6948d73b0cc2f6a13e4ecd5bc09f5be54b7dc
+b1a6948d73b0cc2f6a13e4ecd5bc09f5be54b7dc
 ```
-The user should obtain the exact commit from the RiskClima checkout used to generate the blocking data.
+
+Permanent source reference:
+
+[https://github.com/lammoc-uff/cnpq-riskclima/tree/b1a6948d73b0cc2f6a13e4ecd5bc09f5be54b7dc/index-blocking/era5](https://github.com/lammoc-uff/cnpq-riskclima/tree/b1a6948d73b0cc2f6a13e4ecd5bc09f5be54b7dc/index-blocking/era5)
+
+The resulting:
+
+```text
+daily_blocking_series.csv
+```
+
+is used as an external intermediate product by:
+
+```text
+scripts/analysis/hydroclimate_blocking_spei_analysis.py
+```
+
+This repository therefore depends on the RiskClima blocking workflow for atmospheric-circulation diagnostics without maintaining a duplicate implementation.
 
 ### Provenance
 
