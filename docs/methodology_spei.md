@@ -40,13 +40,15 @@ Positive D values indicate a relative surplus of precipitation compared to refer
 
 ## SPEI accumulation scales
 
-The SPEI is multi-scalar. For each scale k, the monthly water balance is accumulated using a non-shifted rectangular moving sum:
+The SPEI is multi-scalar. For each scale ($`k`$), the monthly water balance is accumulated using a non-shifted rectangular moving sum:
 
 $`
-D_{k,t} = \sum_{i=0}^{k−1} D_{t-1}
+D_{k,t} = \sum_{i=0}^{k−1} D_{t-i}
 `$
 
-The pipeline calculates values ​​for k = 1, 3, 6, and 12 months. Consequently, the first k−1 months of each series remain undefined, as a complete accumulation window is not available.
+The pipeline calculates values ​​for $`k = 1, 3, 6`$, and $`12`$ months. 
+
+Consequently, the first $`k−1`$ months of each series remain undefined, as a complete accumulation window is not available.
 
 ## Calibration period
 
@@ -54,12 +56,21 @@ The pipeline calculates values ​​for k = 1, 3, 6, and 12 months. Consequentl
 
 ## Probability distribution
 
-For each timescale, we fit the distribution independently for each grid point and calendar month. Thus, we fit January values against the Januarys of the calibration period, February values ​​against the Februarys, and so on. Based on the 1981–2010 period, each monthly fit comprises 30 values ​​when the series is complete.
-The three-parameter log-logistic distribution is used with the Generalized Logistic (GLO) parameterization, following the formulation employed in the SPEI methodology. We estimate parameters using unbiased probability-weighted moments (ub-PWM), as recommended by [Beguería et al. (2014)](https://doi.org/10.1002/joc.3887).
+For each timescale, we fit the distribution independently for each grid point and calendar month. 
+
+Thus, we fit January values against the Januarys of the calibration period, February values ​​against the Februarys, and so on. 
+
+Based on the 1981–2010 period, each monthly fit comprises 30 values ​​when the series is complete.
+
+The three-parameter log-logistic distribution is used with the Generalized Logistic (GLO) parameterization, following the formulation employed in the SPEI methodology. 
+
+We estimate parameters using unbiased probability-weighted moments (ub-PWM), as recommended by [Beguería et al. (2014)](https://doi.org/10.1002/joc.3887).
 
 ## Unbiased probability-weighted moments and L-moments
 
-For each monthly calibration sample, the unbiased probability-weighted moments $`\beta_{0}`$, $`\beta_{1}`$, and $`\beta_{2}`$ are calculated. The pipeline converts these values ​​into the first three L-moments:
+For each monthly calibration sample, the unbiased probability-weighted moments $`\beta_{0}`$, $`\beta_{1}`$, and $`\beta_{2}`$ are calculated. 
+
+The pipeline converts these values ​​into the first three L-moments:
 
 $`
 \lambda_{1} = \beta_{o}
@@ -74,10 +85,14 @@ $`
 `$
 
 $`
-\tau_{3} = \lambda_{3} / \lambda_{2}
+\tau_{3} = \frac{\lambda_3}{\lambda_2}
 `$
 
-In the GLO parameterization implemented in the pipeline, the shape parameter is $`κ = −\tau_{3}`$. The parameters $`\epsilon`$ (location), $`\alpha`$ (scale), and $`k`$ (shape) are derived from $`\lambda_{1}`$, $`\lambda_{2}`$, and $`k`$. Fits with invalid parameters $`(\lambda_{2} \le 0, |k| \ge 1)`$ or missing values ​​during the calibration period are recorded as NaN.
+In the GLO parameterization implemented in the pipeline, the shape parameter is $`\kappa = −\tau_{3}`$. 
+
+The parameters $`\xi`$ (location), $`\alpha`$ (scale), and $`\kappa`$ (shape) are derived from $`\lambda_{1}`$, $`\lambda_{2}`$, and $`\kappa`$. 
+
+Fits with invalid parameters $`(\lambda_{2} \le 0, |\kappa| \ge 1)`$ or missing values ​​during the calibration period are recorded as NaN.
 
 ## Standard-normal transformation
 
@@ -87,9 +102,14 @@ $`
 SPEI = \phi^{-1}[F(D)]
 `$
 
-The final interpretation is the standard one for a standardized variable: negative values ​​represent conditions drier than the reference climate, and positive values ​​represent wetter conditions. Probabilities are limited only by float64 machine precision to avoid ±∞ values ​​during the normal transformation.
+The final interpretation is the standard one for a standardized variable: negative values ​​represent conditions drier than the reference climate, and positive values ​​represent wetter conditions. 
+
+Probabilities are limited only by float64 machine precision to avoid ±∞ values ​​during the normal transformation.
 
 ## Outputs
 
-The pipeline produces four independent NetCDF files: SPEI-1, SPEI-3, SPEI-6, and SPEI-12. Each file contains the index time series and the parameters $`\epsilon`$, $`\alpha`$, and $`k`$ fitted for the 12 calendar months and for each grid point. Optionally, the pipeline also saves the monthly climatic water balance P−ETo.
+The pipeline produces four independent NetCDF files: SPEI-1, SPEI-3, SPEI-6, and SPEI-12. Each file contains the index time series and the parameters $`\xi`$, $`\alpha`$, and $`\kappa`$ fitted for the 12 calendar months and for each grid point. 
+
+Optionally, the pipeline also saves the monthly climatic water balance P−ETo.
+
 The final files are written in float32 format, using zlib level 4 compression when the netCDF4 backend is available, and include metadata recording the period, scale, calibration, distribution, fitting method, and shapefile used.
