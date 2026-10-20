@@ -67,7 +67,9 @@ To define a continuous deforestation frontier, the largest spatially connected c
 
 Municipalities or groups of municipalities spatially disconnected from the main component were excluded.
 
-The final Arc of Deforestation therefore corresponds to the largest contiguous territorial set derived from the municipalities collectively representing approximately 75% of the 2024 deforestation.
+The final Arc of Deforestation corresponds to the largest contiguous territorial component derived from the initial municipal set that cumulatively represented approximately 75% of total 2024 deforestation.
+
+Because spatially disconnected municipalities or groups were removed after the initial cumulative selection, the final continuous polygon should not be interpreted as necessarily retaining exactly 75.0592% of total mapped deforestation.
 
 ## Output
 
