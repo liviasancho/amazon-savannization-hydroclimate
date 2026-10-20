@@ -164,9 +164,7 @@ Software: RiskClima
 
 Repository:
 
-```text
 [https://github.com/lammoc-uff/cnpq-riskclima](https://github.com/lammoc-uff/cnpq-riskclima)
-```
 
 Exact commit:
 
@@ -213,9 +211,7 @@ docs/data_availability_notes.md
 
 Repository: 
 
-```text
 [https://github.com/liviasancho/amazon-savannization-hydroclimate](https://github.com/liviasancho/amazon-savannization-hydroclimate)
-```
 
 Release: v1.0.0
 
