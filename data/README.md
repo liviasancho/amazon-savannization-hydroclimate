@@ -452,6 +452,10 @@ Processing workflow:
 
 The original Landsat products are not redistributed in this repository.
 
+Known catalogue-availability limitations affecting the original 2013 and 2026 Landsat products are documented in:
+
+`docs/data_availability_notes.md`
+
 
 ## Data redistribution policy
 
