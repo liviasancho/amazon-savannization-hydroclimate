@@ -32,6 +32,8 @@ repository-code: "https://github.com/SEU_USUARIO/amazon-savannization-hydroclima
 
 license: "Apache-2.0"
 
+doi: 10.5281/zenodo.23511898
+
 keywords:
   - Amazon
   - Legal Amazon
