@@ -1,6 +1,6 @@
 # Amazon Savannization Hydroclimate
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23511898.svg)](https://doi.org/10.5281/zenodo.23511898)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23511897.svg)](https://doi.org/10.5281/zenodo.23511897)
 
 
 Reproducible workflows, methodological documentation, and derived spatial data supporting analyses of environmental change across the Brazilian Legal Amazon.
@@ -62,7 +62,7 @@ workflow/
       QGIS workflow for Landsat land-surface temperature
 
 docs/
-      Methodology, provenance, data-availability, and reproduction documentation
+      Methodology, provenance, data availability, and reproduction documentation
 
 data/
   README.md
@@ -102,7 +102,7 @@ docs/methodology_climate_extremes.md
 
 ### Arc of Deforestation
 
-The study-specific Arc of Deforestation was derived from 2024 PRODES deforestation and 2025 IBGE municipal boundaries.
+The study-specific Arc of Deforestation was derived from 2024 PRODES deforestation data and 2025 IBGE municipal boundaries.
 
 Detailed methodology:
 
@@ -174,7 +174,7 @@ Workflow documentation:
 workflow/landsat_lst/README.md
 ```
 
-Known catalogue-availability limitations are documented in:
+Known catalog-availability limitations are documented in:
 
 ```text
 docs/data_availability_notes.md
@@ -213,11 +213,22 @@ Large generated NetCDF files and intermediate outputs are excluded from Git vers
 
 ## Citation
 
-Software citation metadata are provided in:
+If you use this repository in your research, please cite:
 
-```text
-CITATION.cff
-```
+Sancho, L., Bazzanela, A., Faleiro, G., Luiz-Silva, W., 
+Leal Filho, W., & Monteiro, A. *Amazon Savannization 
+Hydroclimate* (Version 1.0.0) [Computer software]. 
+https://doi.org/10.5281/zenodo.23511897
+
+For reproducibility of a specific version, please cite
+the corresponding version DOI.
+
+**Version v1.0.0:**
+https://doi.org/10.5281/zenodo.23511898
+
+Citation metadata are available in
+[CITATION.cff](CITATION.cff).
+
 
 ## License
 
